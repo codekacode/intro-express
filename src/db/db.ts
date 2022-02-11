@@ -1,5 +1,5 @@
-import { User } from "../types.ts/User";
+// import { UserType } from "../types.ts/User";
 
-export const db: User[] = [
-    
-]
+// export const db: UserType[] = [
+//     {name: "codeka", age: 33, id:1},
+// ]
