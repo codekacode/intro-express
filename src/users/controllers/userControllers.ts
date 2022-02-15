@@ -1,6 +1,7 @@
 import {Request, Response} from 'express';
-import { UserType } from '../types.ts/User';
-import { UserModel as User } from '../models/userModel'
+
+import { UserModel as User } from '../../models/userModel'
+import { UserType } from '../routes/types.ts/User';
 
 export const getUsers = async(req: Request, res: Response) => {
 
@@ -13,21 +14,19 @@ export const createUser = async(req: Request, res: Response) => {
     // user.id = Date.now();
     // db.push(user);
     if (!req.body) {
-        res.status(404).json({})
+        res.status(400).json({})
     }
     try {
 
-        const user = await new User({name: req.body.name, email: req.body.email, age: req.body.age});
+        const user = new User({name: req.body.name, email: req.body.email, age: req.body.age}); //no es asincrono por tal razon no necsita un await
         const savedUser = await user.save();
         res.status(200).json({data: savedUser})
 
-    } catch (err) {
-
-        console.log(err);
+    } catch (err: any) {
+        res.status(400).json({error: err.message});
         
     }
 
-    
 }
 
 export const editUsers = (req: Request, res: Response) => {
