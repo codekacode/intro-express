@@ -1,6 +1,6 @@
 import {Request, Response} from 'express';
 
-import { UserModel as User } from '../../models/userModel'
+import { UserModel as User } from '../models/userModel'
 import { UserType } from '../routes/types.ts/User';
 
 export const getUsers = async(req: Request, res: Response) => {

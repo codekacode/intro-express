@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { Types } from 'mongoose';
 
 const Schema = mongoose.Schema;
 
@@ -13,6 +14,7 @@ const UserSchema = new Schema({
     name: {
         type: String,
         // required: true,
+        unique: true
 
     },
     email: {
