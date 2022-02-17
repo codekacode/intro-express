@@ -4,8 +4,12 @@ import { CreateTask } from "../routes/types/TaskInterface";
 
 export const getTask = async(req: Request, res: Response) => {
 
-    const tasks = await Task.find({});
-    res.status(200).json({tasks});
+    try {
+        const tasks = await Task.find({});
+        res.status(200).json({tasks});
+    } catch (error) {
+        res.send(400).json({})
+    }
 }
 
 export const createTask = async(req: Request<{}, {}, CreateTask>, res: Response) => {

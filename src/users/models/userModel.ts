@@ -3,7 +3,7 @@ import { Types } from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-interface IUser {
+export interface IUser {
     name: string;
     email: string;
     age: number,
@@ -22,7 +22,10 @@ const UserSchema = new Schema({
         // required: true,
         unique: true
     },
-    age: Number,
+    age: {
+        type: Number,
+        required: [true, "Edad Requerida"]
+    },
     created_at:{
         type: Date,
         default: Date.now()
