@@ -1,8 +1,8 @@
 import { createUserService } from './../services/createUserService';
 import { logger } from './../../logger/appLogger';
 import {NextFunction, Request, Response} from 'express';
-import { UserModel as User } from '../models/userModel'
-import { userRequest } from '../routes/types.ts/User';
+import { UserModel as User } from '../entity/models/userModel'
+import { userRequest } from '../entity/types/userInterface';
 
 export const getUsers = async(req: Request, res: Response, next: NextFunction) => {
     

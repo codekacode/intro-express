@@ -1,8 +1,8 @@
-import { userRequest } from './../routes/types.ts/User';
+import { userRequest } from '../entity/types/userInterface';
 import { logger } from './../../logger/appLogger';
-import { UserModel } from './../models/userModel';
+import { UserModel } from '../entity/models/userModel';
 import { ApplicationError } from "../../customErrors/applicationError";
-import { IUser } from "../models/userModel";
+import { IUser } from "../entity/models/userModel";
 
 
 export const createUserService = async (userRequest: userRequest): Promise<IUser> => {

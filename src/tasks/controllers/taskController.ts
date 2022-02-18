@@ -1,5 +1,5 @@
 import {Request, Response} from "express";
-import { Task } from "../models/taskModel";
+import { Task } from "../entity/models/taskModel";
 import { CreateTask } from "../routes/types/TaskInterface"; 
 
 export const getTask = async(req: Request, res: Response) => {
